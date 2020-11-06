@@ -69,6 +69,18 @@ img {
 .hover-in-shadow:hover {
   box-shadow: var(--outer-shadow-0);
 }
+.hover-in-shadow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+.hover-in-shadow:hover::after {
+  box-shadow: var(--inner-shadow);
+}
 
 /************* Header style *************/
 .header {
@@ -78,6 +90,7 @@ img {
   top: 0;
   left: 0;
   z-index: 99;
+  background-color: aqua;
 }
 .header .logo a {
   display: inline-block;
@@ -101,6 +114,9 @@ img {
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+.header .hamburger-btn::after{
+  border-radius: 50%;
 }
 .header .hamburger-btn span {
   display: block;
