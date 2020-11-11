@@ -461,5 +461,30 @@ img {
 .about-section .about-info .btn-1 {
   margin: 3rem 2rem 0 0;
 }
+.about-section .about-tabs {
+  padding: 6rem 1.5rem 5rem;
+  flex: 0 0 100%;
+  max-width: 100%;
+  text-align: center;
+}
+.about-section .about-tabs .tab-item {
+  display: inline-block;
+  margin: 0 .5rem 1rem;
+  padding: .5rem 1rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: all .3s ease;
+  font-size: 1.6rem;
+  color: var(--text-black-600);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.about-section .about-tabs .tab-item:hover:not(.active) {
+  opacity: .6;
+}
+.about-section .about-tabs .tab-item.active{
+  color: var(--skin-color);
+}
+.about-section
 
 /************* About me style end *************/
