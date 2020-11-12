@@ -492,7 +492,7 @@ img {
 .about-section .skills {
   padding: 0 0 4rem;
 }
-.about-section .skills .skill-item{
+.about-section .skills .skill-item {
   flex: 0 0 50%;
   max-width: 50%;
   padding: 0 1.5rem;
@@ -508,14 +508,13 @@ img {
   height: 2rem;
   border-radius: 1rem;
   position: relative;
-
 }
-.about-section .skills .skill-item .progress-bar{
+.about-section .skills .skill-item .progress-bar {
   background-color: var(--text-black-600);
-  height: .6rem;
+  height: 0.6rem;
   position: absolute;
-  left: .7rem;
-  top: .7rem;
+  left: 0.7rem;
+  top: 0.7rem;
   border-radius: 1rem;
 }
 .about-section .skills .skill-item .progress-bar span {
@@ -526,6 +525,99 @@ img {
   font-weight: 500;
   color: var(--text-black-600);
   margin-top: -4rem;
+}
+.about-section .experience {
+  padding-bottom: 8rem;
+}
+.about-section .timeline {
+  flex: 0 0 100%;
+  max-width: 100%;
+  position: relative;
+}
+.about-section .timeline::before {
+  content: "";
+  position: absolute;
+  width: 0.1rem;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  background-color: var(--bg-black-100);
+}
+.about-section .timeline .timeline-item {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 1.5rem;
+}
+.about-section .timeline .timeline-item:nth-child(odd) {
+  padding-right: calc(50% + 5rem);
+  text-align: right;
+}
+.about-section .timeline .timeline-item:nth-child(even) {
+  padding-left: calc(50% + 5rem);
+}
+.about-section .timeline .timeline-item-inner {
+  padding: 3rem;
+  border-radius: 0.3rem;
+  position: relative;
+}
+.about-section .timeline .timeline-item-inner::before {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: .1rem;
+  top: 3.7rem;
+  background-color: var(--bg-black-100);
+  z-index: -1;
+}
+.about-section .timeline .timeline-item:nth-child(odd) .timeline-item-inner::before {
+  right: -3rem;
+}.about-section .timeline .timeline-item:nth-child(even) .timeline-item-inner::before {
+  left: -3rem;
+}
+.about-section .timeline .timeline-item-inner .icon {
+  height: 4rem;
+  width: 4rem;
+  text-align: center;
+  line-height: 4rem;
+  position: absolute;
+  top: 1.8rem;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  color: var(--skin-color);
+  background-color: var(--bg-black-50);
+  border: 0.1rem solid var(--bg-black-100);
+}
+.about-section .timeline .timeline-item:nth-child(odd) .icon {
+  right: -7rem;
+}
+.about-section .timeline .timeline-item:nth-child(even) .icon {
+  left: -7rem;
+}
+.about-section .timeline .timeline-item-inner span {
+  font-weight: 500;
+  color: var(--skin-color);
+  display: block;
+  margin: 0 0 1rem;
+  text-transform: capitalize;
+}
+.about-section .timeline .timeline-item-inner h3 {
+  font-size: 2rem;
+  color: var(--text-black-700);
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  text-transform: capitalize;
+}
+.about-section .timeline .timeline-item-inner h4 {
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--text-black-600);
+  margin: 0;
+}
+.about-section .timeline .timeline-item-inner p {
+  font-size: 1.6rem;
+  color: var(--text-black-600);
+  line-height: 2.6rem;
+  margin: 1.5rem 0 0;
 }
 
 /************* About me style end *************/
