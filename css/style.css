@@ -404,7 +404,7 @@ img {
 
 /************* About me style start *************/
 .about-section {
-  padding: 8rem 0 8rem;
+  padding: 8rem 0 0;
   min-height: 100vh;
 }
 .about-section .about-img {
@@ -469,22 +469,63 @@ img {
 }
 .about-section .about-tabs .tab-item {
   display: inline-block;
-  margin: 0 .5rem 1rem;
-  padding: .5rem 1rem;
+  margin: 0 0.5rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 3rem;
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   font-size: 1.6rem;
   color: var(--text-black-600);
   font-weight: 500;
   text-transform: capitalize;
 }
 .about-section .about-tabs .tab-item:hover:not(.active) {
-  opacity: .6;
+  opacity: 0.6;
 }
-.about-section .about-tabs .tab-item.active{
+.about-section .about-tabs .tab-item.active {
   color: var(--skin-color);
 }
-.about-section
+.about-section .tab-content {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.about-section .skills {
+  padding: 0 0 4rem;
+}
+.about-section .skills .skill-item{
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 1.5rem;
+  margin-bottom: 4rem;
+}
+.about-section .skills .skill-item p {
+  font-size: 1.6rem;
+  color: var(--text-black-600);
+  text-transform: capitalize;
+  margin: 0 0 1rem;
+}
+.about-section .skills .skill-item .progress {
+  height: 2rem;
+  border-radius: 1rem;
+  position: relative;
+
+}
+.about-section .skills .skill-item .progress-bar{
+  background-color: var(--text-black-600);
+  height: .6rem;
+  position: absolute;
+  left: .7rem;
+  top: .7rem;
+  border-radius: 1rem;
+}
+.about-section .skills .skill-item .progress-bar span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text-black-600);
+  margin-top: -4rem;
+}
 
 /************* About me style end *************/
