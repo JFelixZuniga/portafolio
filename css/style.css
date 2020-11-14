@@ -726,6 +726,7 @@ img {
   flex: 0 0 100%;
   max-width: 100%;
   text-align: center;
+  margin-bottom: 2rem;
 }
 .portfolio-section .filter-item {
   display: inline-block;
@@ -745,7 +746,32 @@ img {
 .portfolio-section .filter-item.active {
   color: var(--skin-color);
 }
-
+.portfolio-section .portfolio-item {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  padding: 1.5rem;
+}
+.portfolio-section .portfolio-item-inner {
+  padding: 1.5rem;
+  border-radius: .5rem;
+}
+.portfolio-section .portfolio-item-img img {
+  border-radius: .5rem;
+  width: 100%;
+}
+.portfolio-section .portfolio-item-img .view-project {
+  display: none;
+}
+.portfolio-section .portfolio-item-details {
+  display: none;
+}
+.portfolio-section .portfolio-item-inner p {
+  font-size: 1.6rem;
+  margin: 1rem 0 0;
+  color: var(--text-black-600);
+  text-transform: capitalize;
+  color-adjust: ;
+}
 
 
 
