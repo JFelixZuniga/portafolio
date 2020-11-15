@@ -36,7 +36,6 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
   background-color: var(--bg-black-50);
-  overflow-y: hidden;
 }
 a {
   text-decoration: none;
@@ -809,6 +808,82 @@ img {
   z-index: 1000;
   background-color: var(--bg-black-50);
   overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+}
+.portfolio-popup .pp-details {
+  max-width: 135rem;
+  width: calc(85% + 3rem);
+  margin: auto;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+.portfolio-popup .pp-details-inner {
+  padding: 3rem 0;
+}
+.portfolio-popup .separator {
+  height: 0.1rem;
+  width: 100%;
+  display: block;
+  background-color: var(--bg-black-100);
+}
+.portfolio-popup .pp-title {
+  padding: 0 1.5rem;
+}
+.portfolio-popup .pp-title h2 {
+  font-size: 2.8rem;
+  color: var(--text-black-900);
+  text-transform: capitalize;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+.portfolio-popup .pp-title p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-black-600);
+  margin: 0 0 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bg-black-100);
+}
+.portfolio-popup .pp-project-details h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-black-700);
+  margin: 0 0 1.5rem;
+  text-transform: capitalize; 
+}
+.portfolio-popup .description {
+  flex: 0 0 65%;
+  max-width: 65%;
+  padding: 0 1.5rem;
+}
+.portfolio-popup .description p {
+  font-weight: 1.6rem;
+  color: var(--text-black-600);
+  line-height: 2.6rem;
+  margin: 0;
+}
+.portfolio-popup .description p span {
+  font-weight: 400;
+}
+.portfolio-popup .info {
+  flex: 0 0 35%;
+  max-width: 35%;
+  padding: 0 1.5rem;
+}
+.portfolio-popup .info ul li {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--text-black-600);
+  font-size: 1.6rem;
+}
+.portfolio-popup .info ul li span {
+  font-weight: 400;
+}
+.portfolio-popup .info ul li:last-child {
+  margin-bottom: 0;
 }
 .portfolio-popup .pp-img {
   max-width: 100%;
@@ -842,10 +917,10 @@ img {
   top: 1.5rem;
   height: 4rem;
   line-height: 4rem;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 .portfolio-popup .pp-project-details-btn i {
-  margin-left: .4rem;
+  margin-left: 0.4rem;
 }
 .portfolio-popup .pp-project-details-btn::after {
   border-radius: 3rem;
@@ -862,7 +937,7 @@ img {
   font-size: 3.5rem;
   color: var(--text-black-600);
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 .portfolio-popup .pp-close::after {
   border-radius: 50%;
@@ -875,6 +950,37 @@ img {
   bottom: 0.5rem;
   font-size: 1.6rem;
   color: var(--text-black-600);
+}
+.portfolio-popup .pp-next,
+.portfolio-popup .pp-prev {
+  position: fixed;
+  top: 50%;
+  height: 4rem;
+  width: 4rem;
+  text-align: center;
+  cursor: pointer;
+  font-size: 2rem;
+  z-index: 100;
+  color: var(--text-black-900);
+  transition: all 0.3s ease;
+  opacity: 0.5;
+}
+.portfolio-popup .pp-next:hover,
+.portfolio-popup .pp-prev:hover {
+  opacity: 1;
+}
+.portfolio-popup .pp-next i,
+.portfolio-popup .pp-prev i {
+  line-height: 4rem;
+}
+.portfolio-popup .pp-prev i {
+  transform: rotate(180deg);
+}
+.portfolio-popup .pp-prev {
+  left: 1.5rem;
+}
+.portfolio-popup .pp-next {
+  right: 1.5rem;
 }
 
 /************* Portfolio Popup style end *************/
