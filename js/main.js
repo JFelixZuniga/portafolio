@@ -27,6 +27,10 @@
   });
 })();
 
+function bodyScrollingToggle() {
+  document.body.classList.toggle("stop-scrolling");
+}
+
 /*--------------- Portafolio filtro y popup ---------------*/
 (() => {
   const filterContainer = document.querySelector(".portfolio-filter"),
@@ -70,11 +74,28 @@
     if (event.target.closest(".portfolio-item-inner")) {
       const portfolioItem = event.target.closest(".portfolio-item-inner")
         .parentElement;
-      console.log(portfolioItem);
-
+      // Obtenemos el index de portfolioItem
       itemIndex = Array.from(portfolioItem.parentElement.children).indexOf(
         portfolioItem
       );
+      screenshots = portfolioItems[itemIndex]
+        .querySelector(".portfolio-item-img img")
+        .getAttribute("data-screenshots");
+      console.log(screenshots);
+      // Convertimos las screenshots en un array
+      screenshots = screenshots.split(",");
+      console.log(screenshots);
+      slideIndex = 0;
+      popupToggle();
     }
   });
+
+  closeBtn.addEventListener("click", () => {
+    popupToggle()
+  })
+
+  function popupToggle() {
+    popup.classList.toggle("open");
+    bodyScrollingToggle
+  }
 })();
