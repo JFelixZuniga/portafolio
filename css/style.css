@@ -1035,5 +1035,83 @@ img {
 .portfolio-popup .pp-next {
   right: 1.5rem;
 }
-
 /************* Portfolio Popup style end *************/
+
+/************* Testimonial style start *************/
+.testimonial-section {
+  padding: 8rem 0 8rem;
+  min-height: 100vh;
+}
+.testimonial-section .testi-box {
+  width: 100%;
+  max-width: 60rem;
+  margin: auto;
+}
+.testimonial-section .testi-slider {
+  border-radius: .5rem;
+}
+.testimonial-section .testi-item {
+  padding: 3rem;
+  text-align: center;
+  position: relative;
+}
+.testimonial-section .testi-item i {
+  position: absolute;
+  font-size: 3rem;
+  color: var(--text-black-600);
+  opacity: 0.1;
+}
+.testimonial-section .testi-item i.left {
+  left: .5rem;
+  top: .5rem;
+}
+.testimonial-section .testi-item i.right {
+  right: .5rem;
+  bottom: .5rem;
+}
+.testimonial-section .testi-item p {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: var(--text-black-600);
+  margin: 0 0 3rem;
+}
+.testimonial-section .testi-item img {
+  max-width: 7rem;
+  display: inline-block;
+  width: 100%;
+}
+.testimonial-section .testi-item span {
+  display: block;
+  margin: 1rem 0 0;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--text-black-600);
+  text-transform: capitalize;
+}
+.testimonial-section .testi-slider-nav {
+  margin-top: 3rem;
+  text-align: center;
+}
+.testimonial-section .testi-slider-nav  span {
+  height: 4rem;
+  width: 4rem;
+  color: var(--skin-color);
+  display: inline-block;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all .3s ease;
+  border-radius: 50%;
+  margin: 0 .4rem;
+}
+.testimonial-section .testi-slider-nav  span::after {
+  border-radius: 50%;
+}
+.testimonial-section .testi-slider-nav  span i {
+  line-height: 4rem;
+
+}
+
+
+
+
+/************* Testimonial style end *************/
