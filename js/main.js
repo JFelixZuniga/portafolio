@@ -28,7 +28,7 @@
 })();
 
 function bodyScrollingToggle() {
-  document.body.classList.toggle("stop-scrolling");
+  document.body.classList.toggle("hidden-scrolling");
 }
 
 /*--------------- Portafolio filtro y popup ---------------*/
@@ -40,7 +40,7 @@ function bodyScrollingToggle() {
     prevBtn = popup.querySelector(".pp-prev"),
     nextBtn = popup.querySelector(".pp-next"),
     closeBtn = popup.querySelector(".pp-close"),
-    projectDetailsContainer = popup.querySelector("pp-details"),
+    projectDetailsContainer = popup.querySelector(".pp-details"),
     projectDetailsBtn = popup.querySelector(".pp-project-details-btn");
   let itemIndex, slideIndex, screenshots;
 
@@ -99,11 +99,14 @@ function bodyScrollingToggle() {
 
   closeBtn.addEventListener("click", () => {
     popupToggle();
+    if (projectDetailsContainer.classList.contains("active")) {
+      popupDetailsToggle();
+    }
   });
 
   function popupToggle() {
     popup.classList.toggle("open");
-    bodyScrollingToggle;
+    bodyScrollingToggle();
   }
 
   function popupSlideshow() {
@@ -139,4 +142,50 @@ function bodyScrollingToggle() {
     }
     popupSlideshow();
   });
+
+  function popupDetails() {
+    // Si portfolio-item-title no existe
+    if (!portfolioItems[itemIndex].querySelector(".portfolio-item-title")) {
+      projectDetailsBtn.style.display = "none";
+      return; // Fin de la función, deja de ejecutarse
+    }
+    projectDetailsBtn.style.display = "block";
+
+    // Obtenemos el detalle del proyecto
+    const details = portfolioItems[itemIndex].querySelector(
+      ".portfolio-item-details"
+    ).innerHTML;
+    // Establecemos los detalles del proyecto
+    popup.querySelector(".pp-project-details").innerHTML = details;
+    // Obtenemos el título del proyecto
+    const title = portfolioItems[itemIndex].querySelector(
+      ".portfolio-item-title"
+    ).innerHTML;
+    // Establecemos el título del proyecto
+    popup.querySelector(".pp-title h2").innerHTML = title;
+    // Obtenemos la categoría del proyecto
+    const category = portfolioItems[itemIndex].getAttribute("data-category");
+    // Establecemos la categoría del proyecto
+    popup.querySelector(".pp-project-category").innerHTML = category;
+  }
+
+  projectDetailsBtn.addEventListener("click", () => {
+    popupDetailsToggle();
+  });
+
+  function popupDetailsToggle() {
+    if (projectDetailsContainer.classList.contains("active")) {
+      projectDetailsBtn.querySelector("i").classList.remove("fa-minus");
+      projectDetailsBtn.querySelector("i").classList.add("fa-plus");
+      projectDetailsContainer.classList.remove("active");
+      projectDetailsContainer.style.maxHeight = 0 + "px";
+    } else {
+      projectDetailsBtn.querySelector("i").classList.remove("fa-plus");
+      projectDetailsBtn.querySelector("i").classList.add("fa-minus");
+      projectDetailsContainer.classList.add("active");
+      projectDetailsContainer.style.maxHeight =
+        projectDetailsContainer.scrollHeight + "px";
+      popup.scrollTo(0, projectDetailsContainer.offsetTop);
+    }
+  }
 })();
