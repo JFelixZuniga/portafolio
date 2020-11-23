@@ -103,6 +103,7 @@ img {
   border-radius: 3rem;
   transition: all 0.3s ease;
   display: inline-block;
+  border: none;
 }
 .btn-1::after {
   border-radius: 3rem;
@@ -1117,8 +1118,46 @@ img {
   line-height: 4rem;
 
 }
-
-
-
-
 /************* Testimonial style end *************/
+
+/************* Contact style start *************/
+.contact-section {
+  padding: 8rem 0 8rem;
+  min-height: 100vh;
+}
+.contact-section .contact-item {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  padding: 1.5rem;
+  display: flex;
+}
+.contact-section .contact-item-inner {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border-radius: .5rem;
+  width: 100%;
+}
+.contact-section .contact-item-inner i {
+  font-size: 2.5rem;
+  color: var(--skin-color);
+}
+.contact-section .contact-item-inner span {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-black-700);
+  margin: 1.5rem 0 1rem;
+  text-transform: capitalize;
+}
+.contact-section .contact-item-inner p {
+  font-size: 1.6rem;
+  color: var(--text-black-600);
+  line-height: 2.6rem;
+  margin: 0;
+  word-break: break-word;
+}
+
+
+
+/************* Contact style end *************/
+
