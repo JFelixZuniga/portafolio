@@ -85,6 +85,7 @@ img {
   width: 100%;
   height: 100%;
   transition: all 0.3s ease;
+  z-index: -1;
 }
 .hover-in-shadow:hover::after {
   box-shadow: var(--inner-shadow);
@@ -1156,8 +1157,45 @@ img {
   margin: 0;
   word-break: break-word;
 }
-
-
-
+.contact-section .contact-form {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-top: 5rem;
+}
+.contact-section .w-50 {
+  padding: 0 1.5rem;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.contact-section .input-group {
+  margin: 0 0 2.5rem;
+  transition: all .3s ease;
+  border-radius: 3rem;
+}
+.contact-section .input-group::after {
+  border-radius: 3rem;
+}
+.contact-section .input-group .input-control {
+  height: 4.5rem;
+  display: block;
+  width: 100%;
+  border-radius: 3rem;
+  border: none;
+  background-color: transparent;
+  font-size: 1.6rem;
+  padding: 0 1.5rem;
+  color: var(--text-black-700);
+}
+.contact-section .input-group textarea.input-control {
+  height: 18.5rem;
+  padding-top: 1.5rem;
+  resize: none;
+}
+.contact-section .submit-btn {
+  flex: 0 0 100%;
+  max-width: 100%;
+  text-align: right;
+  padding: 0 1.5rem;
+}
 /************* Contact style end *************/
 
