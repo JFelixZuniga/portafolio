@@ -1046,9 +1046,16 @@ img {
   width: 100%;
   max-width: 60rem;
   margin: auto;
+  padding: 0 1.5rem;
 }
 .testimonial-section .testi-slider {
   border-radius: .5rem;
+  overflow: hidden;
+}
+.testimonial-section .testi-slider-container {
+  display: flex;
+  transition: margin 1s ease;
+  align-items: center;
 }
 .testimonial-section .testi-item {
   padding: 3rem;
