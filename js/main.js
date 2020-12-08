@@ -1,3 +1,71 @@
+/*--------------- Menu de navegación ---------------*/
+(() => {
+  const hamburgerBtn = document.querySelector(".hamburger-btn"),
+    navMenu = document.querySelector(".nav-menu"),
+    closeNavBtn = navMenu.querySelector(".close-nav-menu");
+
+  hamburgerBtn.addEventListener("click", showNavMenu);
+  closeNavBtn.addEventListener("click", hideNavMenu);
+
+  function showNavMenu() {
+    navMenu.classList.add("open");
+    bodyScrollingToggle();
+  }
+  function hideNavMenu() {
+    navMenu.classList.remove("open");
+    fadeOutEffect();
+    bodyScrollingToggle();
+  }
+  function fadeOutEffect() {
+    document.querySelector(".fade-out-effect").classList.add("active");
+    setTimeout(() => {
+      document.querySelector(".fade-out-effect").classList.remove("active");
+    }, 300);
+  }
+
+  document.addEventListener("click", (event) => {
+    if (event.target.classList.contains("link-item")) {
+      // Nos aseguramos de que el event.target.hash tenga un valor antes de anular el comportamiento predeterminado
+      if (event.target.hash !== "") {
+        event.preventDefault();
+        const hash = event.target.hash;
+        console.log(hash);
+        // Desactivar la "section" activa existente
+        document.querySelector(".section.active").classList.add("hide");
+        document.querySelector(".section.active").classList.remove("active");
+        // Activamos la nueva "section"
+        document.querySelector(hash).classList.add("active");
+        document.querySelector(hash).classList.remove("hide");
+        // Desactivamos el menú de navegación activo existente
+        navMenu
+          .querySelector(".active")
+          .classList.add("outer-shadow", "hover-in-shadow");
+        navMenu
+          .querySelector(".active")
+          .classList.remove("active", "inner-shadow");
+        if (navMenu.classList.contains("open")) {
+          // Activamos el nuevo menú de navegación
+          event.target.classList.add("active", "inner-shadow");
+          event.target.classList.remove("outer-shadow", "hover-in-shadow");
+          // Escondemos el menú de navegación
+          hideNavMenu();
+        } else {
+          let navItems = navMenu.querySelectorAll(".link-item");
+          navItems.forEach((item) => {
+            if (hash === item.hash) {
+              item.classList.add("active", "inner-shadow");
+              item.classList.remove("outer-shadow", "hover-in-shadow");
+            }
+          });
+          fadeOutEffect();
+        }
+        // Agregamos el hash (#) a la url
+        window.location.hash = hash;
+      }
+    }
+  });
+})();
+
 /*--------------- About section tabs ---------------*/
 //invocamos de inmediato la función
 (() => {
@@ -229,10 +297,22 @@ function bodyScrollingToggle() {
 
   function slider() {
     // Desactivamos la clase "active" si existe
-    sliderContainer.querySelector(".testi-item.active").classList.remove("active");
+    sliderContainer
+      .querySelector(".testi-item.active")
+      .classList.remove("active");
     // Activamos un nuevo slide
-    slides[slideIndex].classList.add("active")
+    slides[slideIndex].classList.add("active");
     sliderContainer.style.marginLeft = -(slideWidth * slideIndex) + "px";
   }
   slider();
+})();
+
+/*--------------- Escondemos todas las secciones menos la activa ---------------*/
+(() => {
+  const sections = document.querySelectorAll(".section");
+  sections.forEach((section) => {
+    if (!section.classList.contains("active")) {
+      section.classList.add("hide");
+    }
+  });
 })();
